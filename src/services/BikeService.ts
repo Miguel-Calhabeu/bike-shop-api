@@ -1,19 +1,18 @@
 import IBikeService from "../interfaces/IBikeService";
-import JsonBikeRepository from "../repositories/JsonBikeRepository";
+import MongoBikeRepository from "../repositories/MongoBikeRepository";
 import IBike from "../interfaces/IBike";
-import { v4 as uuidv4 } from 'uuid';
 
 class BikeService implements IBikeService{
-    private repository: JsonBikeRepository;
+    private repository: MongoBikeRepository;
 
     constructor() {
-        this.repository = new JsonBikeRepository();
+        this.repository = new MongoBikeRepository();
     }
 
     private async checkBikeExists(bike: IBike): Promise<IBike | undefined> {
         const bikes = await this.repository.findAll();
         for (const existingBike of bikes) {
-            if (existingBike.brand === bike.brand && existingBike.model === bike.model && existingBike.color === bike.color && existingBike.gears === bike.gears) {
+            if (existingBike.brand === bike.brand && existingBike.bikeModel === bike.bikeModel && existingBike.color === bike.color && existingBike.gears === bike.gears) {
                 return existingBike;
             }
         }
@@ -21,7 +20,7 @@ class BikeService implements IBikeService{
     }
 
     async addBike(bike: IBike): Promise<IBike> {
-        if (!bike.color || !bike.brand || !bike.model || bike.price == null || bike.gears == null) {
+        if (!bike.color || !bike.brand || !bike.bikeModel || bike.price == null || bike.gears == null) {
             throw new Error("Todos os campos obrigatórios (color, brand, model, price, gears) devem ser fornecidos.");
         }
 
@@ -33,7 +32,7 @@ class BikeService implements IBikeService{
             throw new Error("A marca deve ser uma string.");
         }
 
-        if (typeof bike.model !== "string") {
+        if (typeof bike.bikeModel !== "string") {
             throw new Error("O modelo deve ser uma string.");
         }
 
@@ -52,14 +51,17 @@ class BikeService implements IBikeService{
         }
 
         if (exisintgBike) {
-            this.repository.update(exisintgBike._id, { stock: exisintgBike.stock + 1 });
-            return { ...exisintgBike, stock: exisintgBike.stock + 1 };
+            const updatedBike = await this.repository.update(exisintgBike.bikeId, { stock: exisintgBike.stock + 1 });
+            if (!updatedBike) {
+                throw new Error("Falha ao atualizar a bicicleta estoque da bicicleta.");
+            }
+            return updatedBike;
         }
 
-        bike._id = uuidv4();
-        bike.stock = 1;
-
-        return this.repository.create(bike);
+        else{
+            bike.stock = 1;
+            return this.repository.create(bike);
+        }
     }
 
     async listBikes(): Promise<IBike[]> {

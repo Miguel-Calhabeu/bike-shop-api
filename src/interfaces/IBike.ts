@@ -1,11 +1,9 @@
-interface IBike {
-    _id: string;
-    color: string;
+export default interface IBike {
+    bikeId: string;
     brand: string;
-    model: string;
-    price: number;
+    bikeModel: string;
+    color: string;
     gears: number;
+    price: number;
     stock: number;
 }
-
-export default IBike;

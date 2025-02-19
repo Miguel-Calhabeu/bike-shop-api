@@ -70,7 +70,7 @@ class BikeController implements IBikeController{
 
     async updateBikePrice(req: Request, res: Response): Promise<void> {
         try {
-            const { id } = req.params;
+            const id = req.params.id;
             const { newPrice } = req.body;
             const bike = await this.service.updateBikePrice(id, newPrice);
             if (!bike) {
