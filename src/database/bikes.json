@@ -1,0 +1,101 @@
+[
+  {
+    "brand": "Specialized",
+    "model": "Roubaix",
+    "price": 1333,
+    "color": "Red",
+    "gears": 12,
+    "_id": "bf08ceba-f373-48c1-b3ab-7fcdc5bb32ac",
+    "stock": 6
+  },
+  {
+    "brand": "Bianchi",
+    "model": "Infinito CV",
+    "price": 2247.37,
+    "color": "Red",
+    "gears": 11,
+    "_id": "474d2ffe-b2b2-4a71-9914-355138497e5e",
+    "stock": 9
+  },
+  {
+    "brand": "Specialized",
+    "model": "Domane SL 7",
+    "price": 2778.15,
+    "color": "Green",
+    "gears": 7,
+    "_id": "70f33c0e-6dd8-4ca3-849a-184ad8eec392",
+    "stock": 4
+  },
+  {
+    "brand": "Cannondale",
+    "model": "Defy Advanced",
+    "price": 3090.6,
+    "color": "Red",
+    "gears": 2,
+    "_id": "315cc229-9952-4409-903c-9cdacca25d6a",
+    "stock": 18
+  },
+  {
+    "brand": "Bianchi",
+    "model": "Infinito CV",
+    "price": 2606.48,
+    "color": "Green",
+    "gears": 2,
+    "_id": "1a5fe336-625d-4618-9546-b7bc3c042a5e",
+    "stock": 17
+  },
+  {
+    "brand": "Giant",
+    "model": "Defy Advanced",
+    "price": 900.21,
+    "color": "Red",
+    "gears": 7,
+    "_id": "a9b8ea36-955f-47fc-8fb3-c4ec7a0b0f66",
+    "stock": 2
+  },
+  {
+    "brand": "Giant",
+    "model": "Defy Advanced",
+    "price": 912.53,
+    "color": "Black",
+    "gears": 6,
+    "_id": "d1dcfd43-037a-40e5-8ada-316b53bcb737",
+    "stock": 7
+  },
+  {
+    "brand": "Giant",
+    "model": "Synapse Carbon",
+    "price": 3140.13,
+    "color": "White",
+    "gears": 8,
+    "_id": "8cbe7d11-39f7-4aac-800b-15883cb7bab6",
+    "stock": 6
+  },
+  {
+    "brand": "Trek",
+    "model": "Domane SL 7",
+    "price": 1715.13,
+    "color": "Green",
+    "gears": 2,
+    "_id": "f5284314-28b3-4676-9ffe-457ac1597cca",
+    "stock": 5
+  },
+  {
+    "brand": "Specialized",
+    "model": "Defy Advanced",
+    "price": 2171.02,
+    "color": "Green",
+    "gears": 11,
+    "_id": "f7d60b60-9b7d-4647-905c-09348eb8d70c",
+    "stock": 14
+  },
+  {
+    "brand": "Specialized",
+    "model": "Defy Advanced",
+    "price": 2171.02,
+    "color": "Green",
+    "gears": 11,
+    "_id": "ac3fe1e2-850f-4250-b202-71bc6fa7a735",
+    "stock": 1
+  }
+]

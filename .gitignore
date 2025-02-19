@@ -1,0 +1,55 @@
+# Node.js
+node_modules/
+.npm
+.pnpm
+.yarn-integrity
+
+# Build
+dist/
+out/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Cache
+.eslintcache
+.cache
+
+# Testing
+coverage/
+.nyc_output/
+
+# Vercel
+.vercel/
+.now/
+.next/
+.functions/
+
+# TypeScript
+*.js.map
+*.d.ts
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
