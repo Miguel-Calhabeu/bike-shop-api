@@ -7,7 +7,6 @@ A **Bike Shop API** é um serviço desenvolvido em **Node.js + Express + TypeScr
 - **Node.js** → Plataforma de execução JavaScript.
 - **Express** → Framework para criação da API.
 - **TypeScript** → Tipagem estática para maior segurança e organização do código.
-- **UUID** → Identificadores únicos para bicicletas.
 - **cors** → Configuração de políticas de requisição cross-origin.
 
 ## 📂 Estrutura do Projeto
@@ -21,10 +20,6 @@ A **Bike Shop API** é um serviço desenvolvido em **Node.js + Express + TypeScr
  ┃ ┣ 📂 repositories  # Persistência de dados
  ┃ ┣ 📂 database      # Configuração do banco de dados
  ┃ ┣ 📜 app.ts        # Configuração principal do Express
- ┣ 📜 .env            # Variáveis de ambiente
- ┣ 📜 package.json    # Dependências do projeto
- ┣ 📜 tsconfig.json   # Configurações do TypeScript
- ┣ 📜 README.md       # Documentação
 ```
 
 ## 📜 Endpoints da API
