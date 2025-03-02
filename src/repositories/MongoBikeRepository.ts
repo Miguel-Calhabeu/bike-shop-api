@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Define the Mongoose schema for the Bike model
 interface IBikeDocument extends IBike, Document {}
 
 const bikeSchema = new mongoose.Schema({
@@ -17,7 +16,6 @@ const bikeSchema = new mongoose.Schema({
     stock: { type: Number, required: true },
 });
 
-// Create the Mongoose model
 const BikeModel: Model<IBikeDocument> = mongoose.model<IBikeDocument>('Bike', bikeSchema);
 
 class MongoBikeRepository implements IBikeRepository {
@@ -26,9 +24,9 @@ class MongoBikeRepository implements IBikeRepository {
     }
 
     private async connect(): Promise<void> {
-        if (mongoose.connection.readyState === 0) { // Check if already connected
+        if (mongoose.connection.readyState === 0) {
             const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/bikeShopDB';
-            await mongoose.connect(uri); // Removed deprecated options
+            await mongoose.connect(uri);
         }
     }
 
