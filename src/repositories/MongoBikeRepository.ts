@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// União de tipos IBike e Document
+// A interface IBikeDocument é o tipo do Model do Mongoose pois conta com as propriedades de ambos os contextos.
 interface IBikeDocument extends IBike, Document {}
 
 const bikeSchema = new mongoose.Schema({
@@ -20,6 +22,7 @@ const BikeModel: Model<IBikeDocument> = mongoose.model<IBikeDocument>('Bike', bi
 
 class MongoBikeRepository implements IBikeRepository {
     constructor() {
+        // A conexão é aberta na instanciação da classe, dessa forma, apenas uma conexão é mantida durante todo o funcionamento da API para toda comunicação necessária.
         this.connect();
     }
 
@@ -30,6 +33,7 @@ class MongoBikeRepository implements IBikeRepository {
         }
     }
 
+    // Funciona como um adaptador entre a interface utilizada pelo Mongoose e a interface padrão da API.
     private DocumentToBike(document: IBikeDocument): IBike {
         return {
             bikeId: document.id,
